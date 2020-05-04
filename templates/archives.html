@@ -4,12 +4,12 @@
 {% block content %}
 <article class="single">
   <header>
-    <h1>{{ _('Archives') }}</h1>
+    <h1>{{ _('Blog posts') }}</h1>
   </header>
   <div>
     <dl>
       {% set previous_date = False %}
-      {% for article in dates %}
+      {% for article in dates if article.blog %}
         {% if article.locale_date != previous_date %}
           {% set previous_date = article.locale_date %}
       <dt>{{ article.locale_date }}</dt>
